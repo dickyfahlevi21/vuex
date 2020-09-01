@@ -14,55 +14,19 @@
           <table class="table-auto mt-20 w-full">
             <thead class="bg-gray-200">
               <tr>
-                <th class="px-4 w-1/5 py-4">No</th>
+                <th class="px-4 w-1/5 py-4">ID</th>
                 <th class="px-4 w-1/5 py-4">Product Name</th>
                 <th class="px-4 w-1/5 py-4">Stock</th>
                 <th class="px-4 w-1/5 py-4">Price</th>
                 <th class="px-4 w-1/5 py-4"></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody v-for="(product, idx) in products" :key="idx">
               <tr>
-                <td class="px-4 w-1/5 py-4">1</td>
-                <td class="px-4 w-1/5 py-4">Bawang</td>
-                <td class="px-4 w-1/5 py-4">4</td>
-                <td class="px-4 w-1/5 py-4">Rp 14.500</td>
-                <td class="px-4 w-1/5 py-4">
-                  <button
-                    class="mr-2 py-2 px-2 bg-green-500 border rounded-md text-white"
-                  >
-                    Edit
-                  </button>
-                  <button
-                    class="mr-2 py-2 px-2 bg-red-500 border rounded-md text-white"
-                  >
-                    Hapus
-                  </button>
-                </td>
-              </tr>
-              <tr class="bg-gray-100">
-                <td class="px-4 w-1/5 py-4">2</td>
-                <td class="px-4 w-1/5 py-4">Rinso</td>
-                <td class="px-4 w-1/5 py-4">5</td>
-                <td class="px-4 w-1/5 py-4">Rp 15.500</td>
-                <td class="px-4 w-1/5 py-4">
-                  <button
-                    class="mr-2 py-2 px-2 bg-green-500 border rounded-md text-white"
-                  >
-                    Edit
-                  </button>
-                  <button
-                    class="mr-2 py-2 px-2 bg-red-500 border rounded-md text-white"
-                  >
-                    Hapus
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <td class="px-4 w-1/5 py-4">3</td>
-                <td class="px-4 w-1/5 py-4">Bluband</td>
-                <td class="px-4 w-1/5 py-4">-2</td>
-                <td class="px-4 w-1/5 py-4">Rp 36.500</td>
+                <td class="px-4 w-1/5 py-4">{{ product.id }}</td>
+                <td class="px-4 w-1/5 py-4">{{ product.name }}</td>
+                <td class="px-4 w-1/5 py-4">{{ product.stock }}</td>
+                <td class="px-4 w-1/5 py-4">{{ product.price }}</td>
                 <td class="px-4 w-1/5 py-4">
                   <button
                     class="mr-2 py-2 px-2 bg-green-500 border rounded-md text-white"
@@ -78,7 +42,6 @@
               </tr>
             </tbody>
           </table>
-          {{ users }}
         </div>
       </div>
     </div>
@@ -96,13 +59,13 @@
       return {};
     },
     methods: {
-      ...mapActions(["getUser"]),
+      ...mapActions(["getProduct"]),
     },
     computed: {
-      ...mapState(["users"]),
+      ...mapState(["products"]),
     },
     created() {
-      this.getUser();
+      this.getProduct();
     },
   };
 </script>

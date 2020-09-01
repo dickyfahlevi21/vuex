@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const port = 3000;
+const token = localStorage.getItem("token");
 
+axios.defaults.headers.common = { Authorization: `bearer ${token}` };
 const instance = axios.create({
   baseURL: `http://localhost:${port}/api/v1/`,
   headers: {

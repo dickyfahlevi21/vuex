@@ -3,7 +3,7 @@
     <div class="w-full max-w-xs mx-auto mt-8">
       <form
         class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-        @submit="registerForm()"
+        @submit.prevent="registerForm"
       >
         <h1 class="text-gray-700 font-bold mt-4 mb-8 text-xl">Register</h1>
         <!-- Username -->
@@ -100,15 +100,15 @@
     name: "Register",
     data() {
       return {
-        full_name: "qwertyuiop",
-        username: "qwertyuiop",
-        password: "123456789",
-        email: "qwertyuiop@mail.com",
-        phone_number: "082121212121",
+        full_name: "",
+        username: "",
+        password: "",
+        email: "",
+        phone_number: "",
       };
     },
     methods: {
-      registerForm(e) {
+      registerForm() {
         const payload = {
           full_name: this.full_name,
           username: this.username,
@@ -116,9 +116,7 @@
           email: this.email,
           phone_number: this.phone_number,
         };
-        console.log(payload, " ini payload ");
         this.registerAction(payload);
-        e.preventDefault();
         return false;
       },
       ...mapActions(["registerAction"]),
