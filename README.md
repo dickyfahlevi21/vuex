@@ -1,12 +1,12 @@
 # vuex
 
-[x] Register
-[x] Login
-[x] Get All Product
-[] Get All Product IN
-[] Get All Product OUT
-[] Get All USER
-[] CRUD
+- [x] Register
+- [x] Login
+- [x] Get All Product
+- [] Get All Product IN
+- [] Get All Product OUT
+- [] Get All USER
+- [] CRUD
 
 ## Project setup
 
