@@ -1,19 +1,26 @@
 <template>
   <div>
     <h1 class="mb-6">Dashboard nya belum rapih</h1>
-    <add-modal />
-    <sign-out />
+    <product-all />
+    <product-in />
+    <product-out />
+
+    <sign-out class="mt-8" />
   </div>
 </template>
 
 <script>
   import SignOut from "@/components/Button/SignOut.vue";
-  import AddModal from "@/components/Modal/AddModal.vue";
+  import ProductAll from "@/components/Modal/ProductAll.vue";
+  import ProductIn from "@/components/Modal/ProductIn.vue";
+  import ProductOut from "@/components/Modal/ProductOut.vue";
   export default {
     name: "Dashboard",
     components: {
       SignOut,
-      AddModal,
+      ProductAll,
+      ProductIn,
+      ProductOut,
     },
     data() {
       return {};
